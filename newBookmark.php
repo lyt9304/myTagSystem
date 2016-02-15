@@ -180,6 +180,7 @@ $type_tags=getAllTags("type_tag");
                 function(data){
                     if(data.status==1){
                         alert("保存成功!");
+                        window.location.reload();
                     }else{
                         alert("保存失败!");
                     }

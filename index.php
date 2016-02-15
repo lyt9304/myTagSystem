@@ -174,8 +174,8 @@
     <script id="tag-item" type="text/x-jquery-tmpl">
         <tr data-tagid="${id}">
           <th><a href="${href}" target="_blank">${name}</a></th>
-          <th>111</th>
-          <th>111</th>
+          <th>${content_tag}</th>
+          <th>${type_tag}</th>
           <th>{{if Number(isStared)}}<span class="glyphicon glyphicon-star icon-true" aria-hidden="true"></span>{{else}}<span class="glyphicon glyphicon-star icon-false" aria-hidden="true"></span>{{/if}}</th>
           <th>{{if Number(isRead)}}<span class="glyphicon glyphicon-ok icon-true" aria-hidden="true"></span>{{else}}<span class="glyphicon glyphicon-ok icon-false" aria-hidden="true"></span>{{/if}}</th>
           <th>${grade}/10分</th>
@@ -206,7 +206,13 @@
                     function(data){
                         if(data.status==1){
                             $("#search-wrapper").empty();
-                            $("#tag-item").tmpl(data.result).appendTo($("#search-wrapper"));
+                            if(data.result){
+                                for(var i=0;i<data.result.length;i++){
+                                    data.result[i]["content_tag"]=data.result[i]["content_tag"].split(";=;").join(", ");
+                                    data.result[i]["type_tag"]=data.result[i]["type_tag"].split(";=;").join(", ");
+                                }
+                                $("#tag-item").tmpl(data.result).appendTo($("#search-wrapper"));
+                            }
                         }else{
                             alert("保存失败!");
                         }

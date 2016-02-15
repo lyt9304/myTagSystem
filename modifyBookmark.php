@@ -45,15 +45,12 @@ $type_tags=getAllTags("type_tag");
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li><a href="index.php">标签查询 <span class="sr-only">(current)</span></a></li>
-                <li class="active"><a href="newBookmark.php">标签新增</a></li>
-                <li><a href="contentTag.php">内容标签管理</a></li>
-                <li><a href="typeTag.php">分类标签管理</a></li>
+                <li class="active"><a href="#">标签修改</a></li>
             </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-            <h1 class="page-header">标签新增</h1>
+            <h1 class="page-header">标签修改</h1>
 
             <div class="row">
                 <form class="form-horizontal" id="new-tag-form">
@@ -184,7 +181,7 @@ $type_tags=getAllTags("type_tag");
 
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-success save-tag">提交新增</button>
+                            <button type="submit" class="btn btn-success save-tag">提交修改</button>
                         </div>
                     </div>
                 </form>
@@ -220,6 +217,7 @@ $type_tags=getAllTags("type_tag");
                 function(data){
                     if(data.status==1){
                         alert("保存成功!");
+                        window.location.href="index.php";
                     }else{
                         alert("保存失败!");
                     }

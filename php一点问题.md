@@ -1,5 +1,8 @@
 1. desc 关键词
 2. 数据库中文
+
+	* ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 3. xdebug
 	
 	* http://www.cnphp6.com/archives/64729
@@ -13,3 +16,11 @@
 
 	* header('Content-type: text/json');
 	* echo json_encode($res);
+
+6. php split和explode
+
+	* http://www.phpddt.com/php/541.html
+
+7. tagging.js
+
+	* https://github.com/sniperwolf/taggingJS
